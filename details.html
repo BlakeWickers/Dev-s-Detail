@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details | Dev's Details</title>
+  <link rel="stylesheet" href="detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header">
+    <nav id="navbar">
+      <a href="index.html">
+        <img src="https://www.dropbox.com/scl/fi/jdas58p4s194h7ijatme6/NewLogo.png?rlkey=tji7me9jtmne9n1ah5alufw3a&st=6jwc3ynt&raw=1" id="logo" alt="Logo">
+      </a>
+
+      <div class="menu-toggle" id="mobile-toggle">
+        <i class="fa fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Services <i class="fa fa-chevron-up"></i></a>
+          <div class="dropdown-content">
+            <a href="details.html#ceramic">Ceramic Coating</a>
+            <a href="details.html#economy">Economy Detail</a>
+            <a href="details.html#luxury">Luxury Detail</a>
+            <a href="details.html#premium">Premium Detail</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="mobile-only">
+          <a href="booking.html" id="schedule-btn">Book Appointment</a>
+        </li>
+      </ul>
+      <a href="booking.html" id="schedule-btn" class="desktop-only">Book Appointment</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="ceramic" class="detail-section fade">
+      <div class="detail-container">
+        <div class="detail-image">
+          <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Ceramic Coating">
+        </div>
+        <div class="detail-content">
+          <p class="gold-tag">Advanced Protection</p>
+          <h2>Ceramic Coating</h2>
+          <p>Our professional-grade Ceramic Coating is a semi-permanent nanolayer that bonds to your vehicle's clear coat. It provides years of hydrophobic protection, making maintenance effortless while delivering a mirror-like candy gloss.</p>
+          <ul class="detail-list">
+            <li><i class="fa fa-check"></i> UV & Chemical Resistance</li>
+            <li><i class="fa fa-check"></i> 2-5 Year Durability Options</li>
+            <li><i class="fa fa-check"></i> Extreme Hydrophobic Properties</li>
+          </ul>
+          <div class="price-box">
+             <span class="price-label">Starting At</span>
+             <span class="price-value">Request Quote</span>
+          </div>
+          <a href="booking.html" class="detail-cta">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="economy" class="detail-section reverse fade">
+      <div class="detail-container">
+        <div class="detail-content">
+          <p class="gold-tag">The Foundation</p>
+          <h2>Economy Detail</h2>
+          <p>The perfect maintenance solution for vehicles that need a professional touch. We utilize pH-neutral chemistry to safely strip road grime without damaging delicate surfaces.</p>
+          <ul class="detail-list">
+            <li><i class="fa fa-check"></i> Safe Hand Wash & Dry</li>
+            <li><i class="fa fa-check"></i> Interior Vacuum & Wipe-down</li>
+            <li><i class="fa fa-check"></i> Wheel & Tire Cleaning</li>
+          </ul>
+          <div class="price-box">
+             <span class="price-label">Investment</span>
+             <span class="price-value">$250 — $400</span>
+          </div>
+          <a href="booking.html" class="detail-cta">Book This Service</a>
+        </div>
+        <div class="detail-image">
+          <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Economy Detail">
+        </div>
+      </div>
+    </section>
+
+    <section id="luxury" class="detail-section fade">
+      <div class="detail-container">
+        <div class="detail-image">
+          <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Luxury Detail">
+        </div>
+        <div class="detail-content">
+          <p class="gold-tag">High-End Care</p>
+          <h2>Luxury Detail</h2>
+          <p>Elevate your vehicle’s aesthetic with our Luxury package. We focus on intensive decontamination and professional sealant applications to restore prestige and interior refinement.</p>
+          <ul class="detail-list">
+            <li><i class="fa fa-check"></i> Iron & Tar Decontamination</li>
+            <li><i class="fa fa-check"></i> High-Grade Paint Sealant</li>
+            <li><i class="fa fa-check"></i> Detailed Interior Crevice Cleaning</li>
+          </ul>
+          <div class="price-box">
+             <span class="price-label">Investment</span>
+             <span class="price-value">$350 — $500</span>
+          </div>
+          <a href="booking.html" class="detail-cta">Book This Service</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="premium" class="detail-section reverse fade">
+      <div class="detail-container">
+        <div class="detail-content">
+          <p class="gold-tag">The Pinnacle</p>
+          <h2>Premium Detail</h2>
+          <p>Our most elite offering. The Premium Detail is a full-scale restoration involving multi-stage paint correction to remove swirls and scratches, returning your vehicle to showroom condition.</p>
+          <ul class="detail-list">
+            <li><i class="fa fa-check"></i> Multi-Stage Paint Correction</li>
+            <li><i class="fa fa-check"></i> Full Interior Steam & Sanitize</li>
+            <li><i class="fa fa-check"></i> Engine Bay Detailing</li>
+          </ul>
+          <div class="price-box">
+             <span class="price-label">Investment</span>
+             <span class="price-value">$450 — $600</span>
+          </div>
+          <a href="booking.html" class="detail-cta">Book This Service</a>
+        </div>
+        <div class="detail-image">
+          <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Premium Detail">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Dev's Detail. All Rights Reserved. Designed by Blake Wickers.</p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navList = document.getElementById('nav-list');
+    mobileToggle.onclick = () => navList.classList.toggle('active');
+  </script>
+</body>
+</html>
