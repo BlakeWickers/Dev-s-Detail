@@ -1,0 +1,539 @@
+/* --- 1. GLOBAL VARIABLES & RESET --- */
+:root {
+  --primary-gold: #c5a059;
+  --bg-dark: #0a0a0a;
+  --bg-card: #161616;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.nav-links a {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-main);
+}
+
+.mySlides span {
+  color: var(--primary-gold);
+}
+
+.fade {
+  animation: fadeEffect 1.5s ease-in-out;
+}
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 4. MAIN CONTENT & HERO FIX --- */
+main {
+  padding-top: 250px; /* Space for About/Contact pages */
+
+  padding-bottom: 80px;
+}
+.slideshow-container {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: -250px; /* Pulls Hero back to the top of the Home page */
+}
+.mySlides img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  z-index: 10;
+}
+
+.showcase:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-gold);
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+}
+
+#navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+#logo {
+  max-width: 180px;
+  height: auto;
+  transition: var(--transition);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+  opacity: 0.8;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: var(--primary-gold);
+}
+
+/* --- 3. MOBILE TOGGLE & BUTTON LOGIC --- */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#schedule-btn {
+  background-color: transparent;
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: var(--transition);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+#schedule-btn:hover {
+  background-color: var(--primary-gold);
+  color: black;
+}
+
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: inline-block;
+}
+
+/* --- 4. DROPDOWNS --- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: var(--bg-card);
+  min-width: 200px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  border-top: 2px solid var(--primary-gold);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  padding: 12px 20px;
+  display: block;
+  font-size: 12px;
+}
+
+/* --- 5. MAIN CONTENT & GRID SYSTEM --- */
+main {
+  /* Pushed to 250px to clear the tall logo and reveal gold sub-text */
+  padding-top: 250px;
+  padding-bottom: 80px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.section-title p {
+  color: var(--primary-gold);
+  font-weight: 700;
+  margin-bottom: 15px; /* Added more space below gold text */
+  letter-spacing: 3px;
+}
+
+.section-title h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  line-height: 1.2;
+}
+
+/* Unified Grid System */
+.service-grid,
+.about-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Showcase Cards */
+.showcase {
+  background-color: var(--bg-card);
+  padding-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+  text-align: center;
+}
+.showcase:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-gold);
+}
+.img-wrapper {
+  overflow: hidden;
+  height: 300px;
+  margin-bottom: 25px;
+}
+.showcaseimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.showcase:hover .showcaseimage {
+  transform: scale(1.1);
+}
+/* About Text Blocks */
+.about-text-block {
+  background-color: var(--bg-card);
+  margin-top: 60px;
+  padding: 80px 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-container {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-container p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* --- 6. FORMS --- */
+.appointment-form,
+.contact-form {
+  background-color: var(--bg-card);
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form-group {
+  margin-bottom: 25px;
+}
+.form-group label {
+  display: block;
+  font-size: 11px;
+  color: var(--primary-gold);
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--bg-dark);
+  border: 1px solid #333;
+  color: var(--text-main);
+  font-family: inherit;
+}
+.form-submit {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* --- 7. MOBILE RESPONSIVENESS (992px) --- */
+@media (max-width: 992px) {
+  .section-title h2 {
+    /* Ensures long words like "CRAFTSMANSHIP" don't break the layout on tiny phones */
+    word-wrap: break-word;
+    hyphens: auto;
+    padding: 0 10px;
+  }
+
+  .nav-links {
+    /* Limits height so the menu is scrollable on small phones if it's too long */
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .showcase {
+    /* Ensures cards don't feel too cramped on very small screens */
+    margin: 0 10px;
+  }
+
+  main {
+    /* Mobile logo is smaller, so 180px is plenty for space */
+    padding-top: 180px;
+  }
+
+  #logo {
+    max-width: 140px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 25px;
+    border-bottom: 1px solid var(--primary-gold);
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-only #schedule-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 14px;
+    background-color: var(--primary-gold);
+    color: black;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: #111;
+    margin-top: 10px;
+  }
+}
+
+/* --- 8. FOOTER & ANIMATIONS --- */
+footer {
+  padding: 50px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.fa-chevron-up {
+  transition: transform 0.4s ease;
+  display: inline-block;
+  margin-left: 5px;
+}
+.dropdown:hover .fa-chevron-up {
+  transform: rotate(180deg);
+}
+
+/* Makes the entire area of the link fill the card */
+.showcase-link {
+  text-decoration: none;
+  color: inherit; /* Keeps your white and gold text colors */
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensures the hover effect we built still triggers on the link */
+.showcase:hover .showcase-link {
+  color: inherit;
+}
+
+/* Optional: Adds a subtle pointer cursor to tell users it's clickable */
+.showcase {
+  cursor: pointer;
+}
+/* --- DETAIL PAGE SPECIFICS --- */
+.detail-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detail-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.detail-section.reverse .detail-container {
+  flex-direction: row-reverse;
+}
+
+.detail-image {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid var(--primary-gold);
+}
+
+.detail-image img {
+  width: 100%;
+  display: block;
+  transition: var(--transition);
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.gold-tag {
+  color: var(--primary-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.detail-list {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.detail-list li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.detail-list i {
+  color: var(--primary-gold);
+  margin-right: 10px;
+}
+
+.detail-cta {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--primary-gold);
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-top: 20px;
+  transition: var(--transition);
+}
+
+.detail-cta:hover {
+  background: white;
+}
+
+.price-box {
+  margin: 30px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.price-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-gold);
+  margin-top: 5px;
+}
+
+/* Mobile Adjustments for Details */
+@media (max-width: 768px) {
+  .detail-container, .detail-section.reverse .detail-container {
+    flex-direction: column;
+  }
+  .detail-image { order: 1; }
+  .detail-content { order: 2; text-align: center; }
+}
