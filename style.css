@@ -1,160 +1,435 @@
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color:black;
+/* --- 1. GLOBAL VARIABLES & RESET --- */
+:root {
+  --primary-gold: #c5a059;
+  --bg-dark: #0a0a0a;
+  --bg-card: #161616;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#content {
-  background-color: white;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.nav-links a {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-main);
+}
+
+.mySlides span {
+  color: var(--primary-gold);
+}
+
+.fade {
+  animation: fadeEffect 1.5s ease-in-out;
+}
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 4. MAIN CONTENT & HERO FIX --- */
+main {
+  padding-top: 250px; /* Space for About/Contact pages */
+
+  padding-bottom: 80px;
+}
+.slideshow-container {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: -250px; /* Pulls Hero back to the top of the Home page */
+}
+.mySlides img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  z-index: 10;
+}
+
+.showcase:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-gold);
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
 }
 
 #navbar {
- 
-  overflow: hidden;
-  background-color: #333;
-  list-style-type: none;
-
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
-#navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+#logo {
+  max-width: 180px;
+  height: auto;
+  transition: var(--transition);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
   text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+  opacity: 0.8;
 }
 
-#dropdown {
-  float: left;
-  overflow: hidden;
+.nav-links a:hover {
+  opacity: 1;
+  color: var(--primary-gold);
 }
 
-#dropdown #services {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-#navbar a:hover, #dropdown:hover #services {
-  background-color: red;
-}
-
-#dropdown-items {
+/* --- 3. MOBILE TOGGLE & BUTTON LOGIC --- */
+.menu-toggle {
   display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0#2);
-  z-index: 1;
-}
-
-#dropdown-items a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-#dropdown-items a:hover {
-  background-color: #ddd;
-}
-
-#dropdown:hover #dropdown-items {
-  display: block;
-}
-
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
+  font-size: 1.5rem;
+  color: var(--text-main);
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  z-index: 1001;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
+#schedule-btn {
+  background-color: transparent;
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  padding: 12px 24px;
+  text-decoration: none;
   font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: var(--transition);
+  white-space: nowrap;
   display: inline-block;
-  transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+#schedule-btn:hover {
+  background-color: var(--primary-gold);
+  color: black;
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: inline-block;
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+/* --- 4. DROPDOWNS --- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: var(--bg-card);
+  min-width: 200px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  border-top: 2px solid var(--primary-gold);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  padding: 12px 20px;
+  display: block;
+  font-size: 12px;
+}
+
+/* --- 5. MAIN CONTENT & GRID SYSTEM --- */
+main {
+  /* Pushed to 250px to clear the tall logo and reveal gold sub-text */
+  padding-top: 250px;
+  padding-bottom: 80px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.section-title p {
+  color: var(--primary-gold);
+  font-weight: 700;
+  margin-bottom: 15px; /* Added more space below gold text */
+  letter-spacing: 3px;
+}
+
+.section-title h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  line-height: 1.2;
+}
+
+/* Unified Grid System */
+.service-grid,
+.about-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Showcase Cards */
+.showcase {
+  background-color: var(--bg-card);
+  padding-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+  text-align: center;
+}
+.showcase:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-gold);
+}
+.img-wrapper {
+  overflow: hidden;
+  height: 300px;
+  margin-bottom: 25px;
+}
+.showcaseimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.showcase:hover .showcaseimage {
+  transform: scale(1.1);
+}
+/* About Text Blocks */
+.about-text-block {
+  background-color: var(--bg-card);
+  margin-top: 60px;
+  padding: 80px 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-container {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-container p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* --- 6. FORMS --- */
+.appointment-form,
+.contact-form {
+  background-color: var(--bg-card);
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form-group {
+  margin-bottom: 25px;
+}
+.form-group label {
+  display: block;
+  font-size: 11px;
+  color: var(--primary-gold);
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--bg-dark);
+  border: 1px solid #333;
+  color: var(--text-main);
+  font-family: inherit;
+}
+.form-submit {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* --- 7. MOBILE RESPONSIVENESS (992px) --- */
+@media (max-width: 992px) {
+  .section-title h2 {
+    /* Ensures long words like "CRAFTSMANSHIP" don't break the layout on tiny phones */
+    word-wrap: break-word;
+    hyphens: auto;
+    padding: 0 10px;
+  }
+
+  .nav-links {
+    /* Limits height so the menu is scrollable on small phones if it's too long */
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .showcase {
+    /* Ensures cards don't feel too cramped on very small screens */
+    margin: 0 10px;
+  }
+
+  main {
+    /* Mobile logo is smaller, so 180px is plenty for space */
+    padding-top: 180px;
+  }
+
+  #logo {
+    max-width: 140px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 25px;
+    border-bottom: 1px solid var(--primary-gold);
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-only #schedule-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 14px;
+    background-color: var(--primary-gold);
+    color: black;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: #111;
+    margin-top: 10px;
+  }
+}
+
+/* --- 8. FOOTER & ANIMATIONS --- */
+footer {
+  padding: 50px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.fa-chevron-up {
+  transition: transform 0.4s ease;
+  display: inline-block;
+  margin-left: 5px;
+}
+.dropdown:hover .fa-chevron-up {
+  transform: rotate(180deg);
+}
+
+/* Makes the entire area of the link fill the card */
+.showcase-link {
+  text-decoration: none;
+  color: inherit; /* Keeps your white and gold text colors */
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensures the hover effect we built still triggers on the link */
+.showcase:hover .showcase-link {
+  color: inherit;
+}
+
+/* Optional: Adds a subtle pointer cursor to tell users it's clickable */
+.showcase {
+  cursor: pointer;
 }
