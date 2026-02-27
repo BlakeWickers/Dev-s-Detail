@@ -1,69 +1,132 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev's Detail</title>
-    <link rel="stylesheet" href="main/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev's Detail | Elite Automotive Restoration</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <section id="header">
-        <ul id="navbar">
-            <li id="home"><a href="index.html">HOME</a></li>
-            <li id="contact"><a href="contact.html">Contact</a></li>
-            <div id="dropdown">
-                <button id="services">Services
-                <i class="fa fa-caret-down"></i>
-                </button>
-                <div id="dropdown-items">
-                    <a href="#">Ceramic Coating</a>
-                    <a href="#">Detailing</a>
-                    <a href="#">Paint Correction</a>
-                </div>
-            </div>
-            <li id="about"><a href="about.html">About Us</a></li>
-        </ul>
-    </section>
 
-	  <section id="content">
-      <div class="slideshow-container">
+  <header id="header">
+    <nav id="navbar">
+      <a href="index.html">
+        <img src="https://www.dropbox.com/scl/fi/jdas58p4s194h7ijatme6/NewLogo.png?rlkey=tji7me9jtmne9n1ah5alufw3a&st=6jwc3ynt&raw=1" id="logo" alt="Logo">
+      </a>
 
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 3</div>
-          <img src="https://bks-prd-5-global-wp-new-blog.storage.googleapis.com/wp-content/uploads/2023/04/13065640/car-detailing-man-holds-microfiber-hand-polishes-car-1-995x602-1.jpg" style="width:100%">
-          <div class="text">Uncompromising Precision</div>
-        </div>
+      <div class="menu-toggle" id="mobile-toggle">
+        <i class="fa fa-bars"></i>
+      </div>
 
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
-          <img src="https://www.carsautosf.com/wp-content/uploads/2023/02/importance-of-car-detailing.jpg" style="width:100%">
-          <div class="text">Flawless From Every Angle</div>
-        </div>
+      <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Services <i class="fa fa-chevron-up"></i></a>
+          <div class="dropdown-content">
+            <a href="details.html#ceramic">Ceramic Coating</a>
+            <a href="details.html#economy">Economy Detail</a>
+            <a href="details.html#luxury">Luxury Detail</a>
+            <a href="details.html#premium">Premium Detail</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="mobile-only">
+          <a href="booking.html" id="schedule-btn">Book Appointment</a>
+        </li>
+      </ul>
+      <a href="booking.html" id="schedule-btn" class="desktop-only">Book Appointment</a>
+    </nav>
+  </header>
 
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 3</div>
-          <img src="https://surfnshine.com/wp-content/uploads/2023/10/car-exterior-detailing-1024x576.jpg" style="width:100%">
-          <div class="text">Elite Level Protection</div>
+  <main id="content">
+    <section class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="https://lirp.cdn-website.com/443aa17f/dms3rep/multi/opt/car+detailing+the+works+auto+center-640w.jpg" alt="Interior Detailing">
+        <div class="overlay-text">
+          <span>Precision Defined</span>
+          <h1>Uncompromising Precision</h1>
         </div>
       </div>
-      <br>
 
-      <!-- The dots/circles -->
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-       </div>
+      <div class="mySlides fade">
+        <img src="https://fleet-details.com/wp-content/uploads/2021/11/post_09-640x427.jpg.webp" alt="Exterior Polish">
+        <div class="overlay-text">
+          <span>Showroom Quality</span>
+          <h1>Flawless From Every Angle</h1>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="https://static.wixstatic.com/media/29e02c_f856ddf909af43f6b4efdb4c1d5c00f2~mv2.jpg/v1/fill/w_640,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/29e02c_f856ddf909af43f6b4efdb4c1d5c00f2~mv2.jpg" alt="Ceramic Coating">
+        <div class="overlay-text">
+          <span>Long-Term Defense</span>
+          <h1>Elite Level Protection</h1>
+        </div>
+      </div>
     </section>
-    
-    
-    <section id="footer">
-    
+
+    <section id="services-preview">
+      <div class="section-title">
+        <p>Premium Car Care</p>
+        <h2>Our Specialized Services</h2>
+      </div>
+
+      <div class="service-grid">
+        <div class="showcase">
+          <a href="details.html#ceramic" class="showcase-link">
+            <div class="img-wrapper">
+              <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Ceramic Coating" class="showcaseimage">
+            </div>
+            <h3>Ceramic Coating Package</h3>
+            <p>The ultimate shield for your vehicle’s finish. This professional-grade nanolayer provides permanent hydrophobic protection, a mirror-like candy gloss, and a sacrificial barrier against UV rays.</p>
+          </a>
+        </div>
+
+        <div class="showcase">
+          <a href="details.html#economy" class="showcase-link">
+            <div class="img-wrapper">
+              <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Economy" class="showcaseimage">
+            </div>
+            <h3>Economy Detailing Package</h3>
+            <p>Essential maintenance performed with an artisan's touch. A precise exterior hand wash and interior vacuuming that utilizes pH-neutral chemistry to safely remove road grime while preserving surfaces.</p>
+          </a>
+        </div>
+
+        <div class="showcase">
+          <a href="details.html#luxury" class="showcase-link">
+            <div class="img-wrapper">
+              <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Luxury" class="showcaseimage">
+            </div>
+            <h3>Luxury Detailing Package</h3>
+            <p>A sophisticated balance of protection and aesthetics. This signature service includes intensive decontamination, professional sealant application, and a thorough interior refresh.</p>
+          </a>
+        </div>
+
+        <div class="showcase">
+          <a href="details.html#premium" class="showcase-link">
+            <div class="img-wrapper">
+              <img src="https://images.pandahub.com/cdn-cgi/image/width=3840,quality=70,format=avif/afa32ee2-b5a0-4a00-93f2-f5824bf17506.jpg" alt="Premium" class="showcaseimage">
+            </div>
+            <h3>Premium Detailing Package</h3>
+            <p>Our absolute pinnacle of automotive restoration. This elite service features multi-stage paint correction and a deep-cleanse of every interior surface for a better-than-factory condition.</p>
+          </a>
+        </div>
+
+      </div>
     </section>
-    
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Dev's Detail. All Rights Reserved. Designed by Blake Wickers.</p>
+    </div>
+  </footer>
+
 </body>
-<script src="JS.js"></script>
+
 </html>
