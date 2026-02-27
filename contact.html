@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dev's Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+   <header id="header">
+    <nav id="navbar">
+      <a href="index.html">
+        <img src="https://www.dropbox.com/scl/fi/jdas58p4s194h7ijatme6/NewLogo.png?rlkey=tji7me9jtmne9n1ah5alufw3a&st=6jwc3ynt&raw=1" id="logo" alt="Logo">
+      </a>
+
+      <div class="menu-toggle" id="mobile-toggle">
+        <i class="fa fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Services <i class="fa fa-chevron-up"></i></a>
+          <div class="dropdown-content">
+            <a href="details.html#ceramic">Ceramic Coating</a>
+            <a href="details.html#economy">Economy Detail</a>
+            <a href="details.html#luxury">Luxury Detail</a>
+            <a href="details.html#premium">Premium Detail</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="mobile-only">
+          <a href="booking.html" id="schedule-btn">Book Appointment</a>
+        </li>
+      </ul>
+      <a href="booking.html" id="schedule-btn" class="desktop-only">Book Appointment</a>
+    </nav>
+  </header>
+
+  <main id="contact-page">
+    <section class="contact-container">
+      <div class="section-title">
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>Inquiries</p>
+        <h2>Send a Message</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+            <div class="info-card showcase">
+                <i class="fa fa-envelope"></i>
+                <h3>Email</h3>
+                <p>info@devsdetail.com</p>
+            </div>
+            <div class="info-card showcase">
+                <i class="fa fa-phone"></i>
+                <h3>Call</h3>
+                <p>(555) 123-4567</p>
+            </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="How can we help?">
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="6" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" id="schedule-btn" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Dev's Detail. All Rights Reserved. Designed by Blake Wickers.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
